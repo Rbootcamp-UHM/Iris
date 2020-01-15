@@ -11,14 +11,6 @@ dataframedemo.R
 3. Write a clean script (you can borrow from the stub) to show us graphically what you explored. 
 4. 
 
-# Download manually via your browser:
-1. Click on the link of interest (e.g., cars.csv)
-2. Right-click or control-click on the "Raw" box on the right just above the screen showing the file contents
-3. **MAC USERS**: click on "Download Linked File As..."     
-   **PC USERS**: click (left-click is regular click) on "Save Target As" (Internet Explorer) or "Save Link Target As" (Netscape, Mozilla)
-4. Specify the directory where you want to save the file (e.g. Rclass/ClassCodeData/)
-5. Click save
-
 # Using Git to clone this directory and keep it up to date:
 Git is a free open-source version control system. You can copy repositories of files to your local computer, and use Git to automatically update your local copies when any new files are added to the server (by me). **Please let me know if any of this needs to be corrected**
 1. Install Git if you havenʻt aready https://git-scm.com/downloads
