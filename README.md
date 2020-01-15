@@ -1,23 +1,29 @@
 # Iris
-Exploring Iris data
+Exploring Iris data and GitHub practice
 
 # R Task 
 
-1. Clone the Iris repository (instructions below) and review the dataframe access code in
-```
-dataframedemo.R
-```
-2. Feel free to start with this stub and develop your own script to explore the iris dataset. Test the code examples, and think about answering the question *** Are the iris varieties different in petal and sepal size? ***
-3. Write a clean script (you can borrow from the stub) to show us graphically what you explored. 
-4. 
+1. Clone the Iris-repo repository (instructions below) into your Rclass folder and review code in
+   ```
+   dataframedemo.R  # Dataframe access
+   iris_stub.R  # A stub to get started with your script.
+   ```
+2. Develop your own script to explore the iris dataset. After testing the code samples, choose a strategy (one method - maybe histogram? maybe bivariate plot? something else?) to focus on. Think about answering the question *** Are the iris varieties different in petal and sepal size? ***
+3. Write a clean script (give it descriptive name, e.g., iris_histogram_myinitials.R, saved in Iris-repo on your computer) to show us graphically what you explored. 
+
+# Push your work back up to GitHub
+
+4. Create your own branch on the Iris-repo. From your Termina/CMD window (in Iris-repo), first check the status of your branches:
    ```
    git branch 
+   ```
+Git will tell you what branches already exist on Iris-repo. One will be master, and there may be others if your classmates added some. Now make your own branch (give it your own name "my-awesome-branch") and check it out (this means Git will start tracking the branch):
+   ```
    git branch my-awesome-branch
    git checkout my-awesome-branch
    ```
 
-Make changes to your scripts. Save your script as iris_mycoolplots.R
-When done, push it back up to the repository.
+When youʻre done working on your script, push it back up to the repository. Check status first:
 
    ```
    git status
@@ -26,7 +32,7 @@ You should get a message that you have changes not staged for commit on your bra
 Add the new files on the docket to push up to your branch on github:
 
    ```
-   git add iris_mycoolplots.R    
+   git add myscript.R    
    ```
 
 Write a commit message:
@@ -38,7 +44,7 @@ Finally push up the changes to your own branch. Donʻt worry it will not change 
    ```
    git push origin my-awesome-branch
    ```
-   
+Everyone can now see the work youʻve done in your own branch.    
 
 
 # Using Git to clone this directory and keep it up to date:
