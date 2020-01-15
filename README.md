@@ -10,6 +10,36 @@ dataframedemo.R
 2. Feel free to start with this stub and develop your own script to explore the iris dataset. Test the code examples, and think about answering the question *** Are the iris varieties different in petal and sepal size? ***
 3. Write a clean script (you can borrow from the stub) to show us graphically what you explored. 
 4. 
+   ```
+   git branch 
+   git branch my-awesome-branch
+   git checkout my-awesome-branch
+   ```
+
+Make changes to your scripts. Save your script as iris_mycoolplots.R
+When done, push it back up to the repository.
+
+   ```
+   git status
+   ```
+You should get a message that you have changes not staged for commit on your branch. This means git found new changes. 
+Add the new files on the docket to push up to your branch on github:
+
+   ```
+   git add iris_mycoolplots.R    
+   ```
+
+Write a commit message:
+
+   ```
+   git commit -m "Add script to make xx plots"
+   ```
+Finally push up the changes to your own branch. Donʻt worry it will not change the "master":
+   ```
+   git push origin my-awesome-branch
+   ```
+   
+
 
 # Using Git to clone this directory and keep it up to date:
 Git is a free open-source version control system. You can copy repositories of files to your local computer, and use Git to automatically update your local copies when any new files are added to the server (by me). **Please let me know if any of this needs to be corrected**
