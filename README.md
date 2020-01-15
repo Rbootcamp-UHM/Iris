@@ -3,7 +3,7 @@ Exploring Iris data and GitHub practice
 
 # R Task 
 
-1. Clone the Iris-repo repository (instructions below) into your Rclass folder and review code in
+1. Clone the `Iris-repo` repository (instructions in last section below if you need) into your Rclass folder and review code in
    ```
    dataframedemo.R  # Dataframe access
    iris_stub.R  # A stub to get started with your script.
