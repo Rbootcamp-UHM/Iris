@@ -9,15 +9,15 @@ Exploring Iris data and GitHub practice
    iris_stub.R  # A stub to get started with your script.
    ```
 2. Develop your own script to explore the iris dataset. After testing the code samples, choose a strategy (one method - maybe histogram? maybe bivariate plot? something else?) to focus on. Think about answering the question *** Are the iris varieties different in petal and sepal size? ***
-3. Write a clean script (give it descriptive name, e.g., iris_histogram_myinitials.R, saved in Iris-repo on your computer) to show us graphically what you explored. 
+3. Start writing a clean script (give it descriptive name, e.g., `iris_histogram_myinitials.R`, saved in `Iris-repo` on your computer) to show us graphically what you explored. We will keep working on it tomorrow.
 
 # Push your work back up to GitHub
 
-4. Create your own branch on the Iris-repo. From your Termina/CMD window (in Iris-repo), first check the status of your branches:
+4. Create your own branch on the `Iris-repo`. From your Terminal/CMD window (in `Iris-repo`), first check the status of your branches:
    ```
    git branch 
    ```
-Git will tell you what branches already exist on Iris-repo. One will be master, and there may be others if your classmates added some. Now make your own branch (give it your own name "my-awesome-branch") and check it out (this means Git will start tracking the branch):
+Git will tell you what branches already exist on `Iris-repo`. One will be master, and there may be others if your classmates added some. Now make your own branch (give it your own name "my-awesome-branch") and check it out (this means Git will start tracking the branch):
    ```
    git branch my-awesome-branch
    git checkout my-awesome-branch
@@ -68,14 +68,14 @@ Git is a free open-source version control system. You can copy repositories of f
 4. Clone the repository. Type the line below, hit return, and it will create a folder called `Histories` in your working directory that contains a copy of all the files currently at that location on the server. **Note this will create a new copy of the whole directory, so you only do this the first time.** 
 
     ```
-    git clone https://github.com/Rbootcamp-UHM/Iris.git
+    git clone https://github.com/Rbootcamp-UHM/Iris-repo.git
     ```
  
 5. Update the repository. Later when Iʻve added more files, do the following to add the new files from the server to your local directory.   
       1. Open your terminal and navigate to within your Histories folder:
 
       ```
-      cd ~/Rclass/ClassCodeData
+      cd ~/Rclass/Iris-repo
       ```
       2. Update the repository:
 
