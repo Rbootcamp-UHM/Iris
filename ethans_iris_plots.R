@@ -54,13 +54,18 @@ abline(sepalW.lm, col="black")
 legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
 
 ##################################################
-# 				Below are extra notes			 #
+#    Generating RMakrdown on Ethan's Computer    #
 ##################################################
 
 #This is needed to set up and use "RMarkdown"
 require("rmarkdown")
 Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
 render("markdown_ethan_test.Rmd", "html_document")
+
+
+##################################################
+# 				Below are extra notes			 #
+##################################################
 
 #This works with the dataset in order
 species <- iris$Species
