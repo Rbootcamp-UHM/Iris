@@ -72,7 +72,7 @@ Git is a free open-source version control system. You can copy repositories of f
     ```
  
 5. Update the repository. Later when Iʻve added more files, do the following to add the new files from the server to your local directory.   
-      1. Open your terminal and navigate to within your Histories folder:
+      1. Open your terminal and navigate to within your Iris-repo folder:
 
       ```
       cd ~/Rclass/Iris-repo
