@@ -26,11 +26,11 @@ mix <- iris[oo,]
 Once I have the scrambled data stored in the object called "mix" I can store each of the columns as a seperate vector:
 
 ```{r}
-species <- iris$Species   
-petalL <- iris$Petal.Length
-petalW <- iris$Petal.Width
-sepalL <- iris$Sepal.Length
-sepalW <- iris$Sepal.Width
+species <- mix$Species
+petalL <- mix$Petal.Length
+petalW <- mix$Petal.Width
+sepalL <- mix$Sepal.Length
+sepalW <- mix$Sepal.Width
 ```
 
 
