@@ -41,17 +41,34 @@ petalW.lm <- lm(petalW ~ petalL)
 sepalL.lm <- lm(sepalL ~ petalL)
 sepalW.lm <- lm(sepalW ~ petalL)
 
-plot(petalL, petalW, cex=1.5, pch=19, col=color2, xlab = "Petal Length", ylab = "Petal Width")
-abline(petalW.lm, col="black")
-legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+#This indexs the iris dataset by species and should make regression lines for each species
+setosa <- mix[mix$Species == "setosa",]
+setosa
+setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
+setosaPLvsSW.lm
 
-plot(petalL, sepalL, col=color2, cex=1.5, pch=19, xlab = "Petal Length", ylab = "Sepal Length")
-abline(sepalL.lm, col="black")
-legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+versicolor <- mix[mix$Species == "versicolor",]
+versicolor
+versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
+versicolorPLvsSW.lm
+
+virginica <- mix[mix$Species == "virginica",]
+virginica
+virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
+virginicaPLvsSW.lm
+
+#Here are the plots
 
 plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
 abline(sepalW.lm, col="black")
 legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+
+plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+abline(setosaPLvsSW.lm, col="purple")
+abline(versicolorPLvsSW.lm, col="blue")
+abline(virginicaPLvsSW.lm, col="orange")
+legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+
 
 ##################################################
 #    Generating RMakrdown on Ethan's Computer    #
@@ -77,3 +94,13 @@ color[species == "versicolor"] <- "blue"
 color
 color[species == "virginica"] <- "green"
 color
+
+#Here are some extra comparisons
+plot(petalL, petalW, cex=1.5, pch=19, col=color2, xlab = "Petal Length", ylab = "Petal Width")
+abline(petalW.lm, col="black")
+legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+
+plot(petalL, sepalL, col=color2, cex=1.5, pch=19, xlab = "Petal Length", ylab = "Sepal Length")
+abline(sepalL.lm, col="black")
+legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+
