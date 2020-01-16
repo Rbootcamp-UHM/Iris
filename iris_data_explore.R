@@ -33,3 +33,7 @@ legend('bottomright', legend = levels(iris$Species), col = 1:3, cex = 1, pch = 1
 #legend('bottomright', legend = levels(iris$Species), col = 1:3, cex = 1, pch = 1)
 
 #rep(c("red", "green", "blue"), each=50)
+
+git add iris_data_explore.R
+git commit -m "Add script to make bivariate plots"
+git push origin ethans-branch
