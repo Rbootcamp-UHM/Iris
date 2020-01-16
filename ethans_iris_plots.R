@@ -1,11 +1,11 @@
 ##################################################
-# 		  Gotta set up that WD (pc only)		#
+#         Gotta set up that WD (pc only)         #
 ##################################################
 
 #setwd("C:/Users/hille/Documents/Rbootcamp_S2020/Iris-repo/")
 
 ##################################################
-# 					Housekeeping				 #
+#                   Housekeeping                 #
 ##################################################
 
 #This mixes the data and then assigns IRIS to read it in the mixed order 
@@ -33,7 +33,7 @@ color2[species2 == "virginica"] <- "orange"
 color2
 
 ##################################################
-# 				2-D Scatter plots				 #
+#                2-D Scatter plots               #
 ##################################################
 
 #Here are the setups for the linear regressions for each of the comparisons I have made
@@ -64,7 +64,7 @@ render("markdown_ethan_test.Rmd", "html_document")
 
 
 ##################################################
-# 				Below are extra notes			 #
+#             Below are extra notes              #
 ##################################################
 
 #This works with the dataset in order
