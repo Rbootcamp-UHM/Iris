@@ -1,0 +1,30 @@
+---
+title: "Hello R Markdown"
+author: "Marguerite"
+date: "2020-01-14"
+output: html_document
+---
+
+This is a text paragraph in an R Markdown document.
+
+Below is working R code in a code chunk: 
+
+```{r}
+oo <- sample(x=1:150, 150, replace=FALSE)
+mix <- iris[oo,]
+
+species2 <- mix$Species
+color2 <- rep("red", 150)
+species2 == "setosa"
+color2[species2 == "setosa"] <- "purple"
+color2
+color2[species2 == "versicolor"] <- "blue"
+color2
+color2[species2 == "virginica"] <- "green"
+color2
+
+plot(mix$Petal.Length, mix$Petal.Width, cex=1, pch=19, col=color2, xlab = "Petal Length", ylab = "Petal Width")
+legend('bottomright', legend = levels(iris$Species), col = c("purple", "blue", "green"), cex = 1, pch = 19)
+```
+
+This is a scatter plot for 
