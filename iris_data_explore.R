@@ -38,6 +38,7 @@ legend('bottomright', legend = levels(iris$Species), col = c("red", "purple", "g
 plot(petalL, col=rep(c("red", "purple", "gold"), each=50), cex=1.5, pch=19, ylab = "Petal Length", xlab = "individual #")
 legend('bottomright', legend = levels(iris$Species), col = c("red", "purple", "gold"), cex = 1, pch = 19)
 abline(lm(petalL), col="black")
+
 plot(petalW)
 
 
