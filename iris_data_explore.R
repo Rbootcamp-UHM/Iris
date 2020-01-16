@@ -2,7 +2,7 @@
 # 				Gotta set up that WD			 #
 ##################################################
 
-setwd("C:/Users/hille/Documents/Rbootcamp_S2020/Iris-repo/")
+#setwd("C:/Users/hille/Documents/Rbootcamp_S2020/Iris-repo/")
 
 ##################################################
 # 					Housekeeping				 #
