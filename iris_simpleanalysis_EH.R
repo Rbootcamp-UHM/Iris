@@ -41,7 +41,7 @@ petalW.lm <- lm(petalW ~ petalL)
 sepalL.lm <- lm(sepalL ~ petalL)
 sepalW.lm <- lm(sepalW ~ petalL)
 
-#This indexs the iris dataset by species and should make regression lines for each species
+#This indexes the iris dataset by species and should make regression lines for each species
 setosa <- mix[mix$Species == "setosa",]
 setosa
 setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
