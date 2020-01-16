@@ -43,4 +43,4 @@ abline(widths.lm, col="blue")
 legend("bottomright", legend=levels(iris$Species), col= c(1,2,3), pch=16)
 
 
-
+d
