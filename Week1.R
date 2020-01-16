@@ -64,6 +64,33 @@ dat$height[c(1,2)]
 # dat$species #species column
 # dat$mass #mass column
 
+Slength <- iris$Sepal.Length	#rename the column headers
+Swidth <- iris$Sepal.Width
+Plength <- iris$Petal.Length
+Pwidth <- iris$Petal.Width
+Species <- iris$Species
+
+rep( "red", 1:50, "blue", 51:100, "green", 50)
+rep(c("red", "green", "blue"), each=50)
+
+rep(1:4, 2)
+rep(1:4, each = 2)       # not the same.
+rep(1:4, c(2,2,2,2))     # same as second.
+rep(1:4, c(2,1,2,1))
+rep(1:4, each = 2, len = 4)    # first 4 only.
+rep(1:4, each = 2, len = 10)   # 8 integers plus two recycled 1's.
+rep(1:4, each = 2, times = 3)  # length 24, 3 complete replications
+
+## replicate a list
+fred <- list(happy = 1:10, name = "squash")
+rep(fred, 5)
+
+
+plot(Slength, Swidth, pch=19, col=rep(c("red", "green", "blue"), each=50))
+#plot all points, species by 50s, colors by 50s
+plot(Slength, Plength, pch=19, col=rep(c("red", "green", "blue"), each=50))
+
+c
 
 
 
