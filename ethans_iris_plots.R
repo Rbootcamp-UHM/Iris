@@ -59,10 +59,12 @@ virginicaPLvsSW.lm
 
 #Here are the plots
 
+#This is the plot with the regression line for ALL OF THE DATA
 plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
 abline(sepalW.lm, col="black")
 legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
 
+#This is the plot with a regression line for EACH SPECIES
 plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
 abline(setosaPLvsSW.lm, col="purple")
 abline(versicolorPLvsSW.lm, col="blue")
