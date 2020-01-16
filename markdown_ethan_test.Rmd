@@ -34,7 +34,7 @@ sepalW <- iris$Sepal.Width
 ```
 
 
-Now that I have each of the columns stored as seperate vectors, I can take the species vector and assign each species its own unique color:
+Now that I have each of the columns stored as seperate vectors, I can take the species vector and assign each species its own unique color based on logical operations:
 
 ```{r}
 species2 <- species
@@ -64,7 +64,39 @@ abline(sepalW.lm, col="black")
 legend('top', legend = levels(species), col = c("purple", "blue", "orange"), cex = .8, pch = 19)
 ```
 
-As we can see from the graph above, the general trend for all species is that as petal length increases, the sepal width decreases. However, it appears that within species as petal length increases, the sepal width also increases.
+As we can see from the graph above, the "general" trend is that as petal length increases, the sepal width decreases.
+
+BUT WAIT THERE'S MORE!!!!
+
+
+We can also index the iris dataset by species and make a regression line for Sepel Width as a function of Petal Length FOR EACH SPECIES:
+```{r]
+setosa <- mix[mix$Species == "setosa",]
+setosa
+setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
+setosaPLvsSW.lm
+
+versicolor <- mix[mix$Species == "versicolor",]
+versicolor
+versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
+versicolorPLvsSW.lm
+
+virginica <- mix[mix$Species == "virginica",]
+virginica
+virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
+virginicaPLvsSW.lm
+```
+
+THEN WE CAN PLOT THE DATA AGAIN WITH EACH SPECIES HAVING THEIR OWN LINE OF REGRESSION:
+```{r}
+plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+abline(setosaPLvsSW.lm, col="purple")
+abline(versicolorPLvsSW.lm, col="blue")
+abline(virginicaPLvsSW.lm, col="orange")
+legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+```
+
+What we can see from THIS plot is that, within species, as petal length increases, sepal width ALSO increases. WOW, who would have thought.
 
 And this will conclude my simple anaylsis of the iris dataset!
 
