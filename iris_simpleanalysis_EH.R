@@ -46,16 +46,37 @@ setosa <- mix[mix$Species == "setosa",]
 setosa
 setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
 setosaPLvsSW.lm
+b.setosa <- coef(setosaPLvsSW.lm)
+int.setosa <- b.setosa[1]
+slope.setosa <- b.setosa[2]
+yhat.setosa <- slope.setosa*setosa$Petal.Length+int.setosa
+yhat.setosa
+error.setosa.sepalW <- setosa$Sepal.Width-yhat.setosa
+error.setosa.sepalW
 
 versicolor <- mix[mix$Species == "versicolor",]
 versicolor
 versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
 versicolorPLvsSW.lm
+b.versicolor <- coef(versicolorPLvsSW.lm)
+int.versicolor <- b.versicolor[1]
+slope.versicolor <- b.versicolor[2]
+yhat.versicolor <- slope.versicolor*versicolor$Petal.Length+int.versicolor
+yhat.versicolor
+error.versicolor.sepalW <- versicolor$Sepal.Width-yhat.versicolor
+error.versicolor.sepalW
 
 virginica <- mix[mix$Species == "virginica",]
 virginica
 virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
 virginicaPLvsSW.lm
+b.virginica <- coef(virginicaPLvsSW.lm)
+int.virginica <- b.virginica[1]
+slope.virginica <- b.virginica[2]
+yhat.virginica <- slope.virginica*virginica$Petal.Length+int.virginica
+yhat.virginica
+error.virginica.sepalW <- virginica$Sepal.Width-yhat.virginica
+error.virginica.sepalW
 
 #Here are the plots
 
@@ -106,3 +127,10 @@ render("markdown_ethan_test.Rmd", "html_document")
 #abline(sepalL.lm, col="black")
 #legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
 
+#plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+#abline(setosaPLvsSW.lm, col="purple")
+#	points(setosa$Petal.Length, yhat.setosa, pch=5)
+#	segments(setosa$Petal.Length, setosa$Sepal.Width, setosa$Petal.Length, yhat.setosa, names=error.setosa.sepalW)
+#abline(versicolorPLvsSW.lm, col="blue")
+#abline(virginicaPLvsSW.lm, col="orange")
+#legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
