@@ -78,7 +78,7 @@ legend('topright', legend = levels(species), col = c("purple", "blue", "orange")
 
 #This is needed to set up and use "RMarkdown"
 require("rmarkdown")
-Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
+#Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc")
 render("markdown_ethan_test.Rmd", "html_document")
 
 
