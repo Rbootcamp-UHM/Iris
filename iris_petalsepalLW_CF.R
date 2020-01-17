@@ -19,3 +19,7 @@ widths.lm <- lm(Pwidth~Swidth)
 abline(widths.lm, col="blue")
 title(main= "Sepal and Petal Widths")
 legend("right", legend=levels(iris$Species), col= c(1,2,3), pch=10)
+
+require("rmarkdown")
+#Sys.setenv(RSTUDIO_PANDOC="C:/Program Files/RStudio/bin/pandoc") 
+render("iris_petalsepalLW_CF.Rmd", "html_document")
