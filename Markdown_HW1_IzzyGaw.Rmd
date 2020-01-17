@@ -1,0 +1,20 @@
+---
+title: "R Markdown Super Awesome Homework 1"
+author: "Izzy Gaw"
+date: "2020-01-16"
+output: html_document
+---
+
+This is a text paragraph in an R Markdown document.
+
+Below is working R code in a code chunk: 
+
+```{r}
+plot(iris$Species, iris$Sepal.Length, main="Plants Are Interesting", ylab= "Sepal Length", xlab= "Species",cex=2, pch=19, col="maroon")
+```
+```{r}
+plot(Sp, SepL, main="Plants Are Intriguing", ylab= "Sepal Length", xlab= "Species",cex=2, pch=19, col="maroon")
+```
+```{r}
+plot(iris$Petal.Length, SepL, main="Shades of Pink", ylab="Sepal Length", xlab="Petal Length", col=color, cex=2, pch=8)
+```
