@@ -87,22 +87,22 @@ render("markdown_ethan_test.Rmd", "html_document")
 ##################################################
 
 #This works with the dataset in order
-species <- iris$Species
-color <- rep("red", 150)
-species == "setosa"
-color[species == "setosa"] <- "purple"
-color
-color[species == "versicolor"] <- "blue"
-color
-color[species == "virginica"] <- "green"
-color
+#species <- iris$Species
+#color <- rep("red", 150)
+#species == "setosa"
+#color[species == "setosa"] <- "purple"
+#color
+#color[species == "versicolor"] <- "blue"
+#color
+#color[species == "virginica"] <- "green"
+#color
 
 #Here are some extra comparisons
-plot(petalL, petalW, cex=1.5, pch=19, col=color2, xlab = "Petal Length", ylab = "Petal Width")
-abline(petalW.lm, col="black")
-legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+#plot(petalL, petalW, cex=1.5, pch=19, col=color2, xlab = "Petal Length", ylab = "Petal Width")
+#abline(petalW.lm, col="black")
+#legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
 
-plot(petalL, sepalL, col=color2, cex=1.5, pch=19, xlab = "Petal Length", ylab = "Sepal Length")
-abline(sepalL.lm, col="black")
-legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+#plot(petalL, sepalL, col=color2, cex=1.5, pch=19, xlab = "Petal Length", ylab = "Sepal Length")
+#abline(sepalL.lm, col="black")
+#legend('bottomright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
 
