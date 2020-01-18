@@ -3,5 +3,4 @@
 ## Rmarkdown example
 [cars regression example](markdown_example.md)
 
-[referring to file in master](../Iris-repo/markdown_example.html)
-
+[html](markdown_example.html)
