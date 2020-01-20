@@ -94,6 +94,3 @@ vv.vir <- chull(sepalL[species == "virginica"], sepalW[species == "virginica"])
 polygon(sepalL[species == "virginica"][vv.vir], sepalW[species == "virginica"][vv.vir])
 ```
 </body>
-
-# require(rmarkdown)
-# render("markdown_rh.Rmd", output_format="html_document")
