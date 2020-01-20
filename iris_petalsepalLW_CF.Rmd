@@ -34,6 +34,7 @@ legend("bottomright", legend=levels(iris$Species), col= c(1,2,3), pch=16)
 It seems that the setosa species has shorter sepal and petal lengths overall with the longer lengths observed in the virginica and versicolor species
 Generally, across all species there is a positive relationship between Sepal and Petal lengths
 
+
 *Here we compare the Petal width and Sepal width values for the 3 species:*
 ```{r}
 plot(Swidth, Pwidth, pch=10, col=iris$Species)

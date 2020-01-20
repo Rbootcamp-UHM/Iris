@@ -6,6 +6,7 @@ Plength <- iris$Petal.Length
 Pwidth <- iris$Petal.Width
 Species <- iris$Species
 
+
 plot(Slength, Plength, pch=10, col=iris$Species) #plot lengths
 lm(Plength~Slength) #save regression line (y~x)
 lengths.lm <- lm(Plength~Slength)
