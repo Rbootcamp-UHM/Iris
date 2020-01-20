@@ -1,7 +1,7 @@
 ---
 title: "Ethan's Iris Analysis in RMarkdown"
 author: "Ethan Hill"
-date: "2020-01-16"
+date: "2020-01-20"
 output: html_document
 ---
 
@@ -15,17 +15,12 @@ setwd("C:/Users/hille/Documents/Rbootcamp_S2020/Iris-repo/")
 ```
 
 
-Next, I've scrambled the iris dataset (gotta make it harder) and stored the scrambled data into the object called mix:
+Next, I've scrambled the iris dataset (gotta make it harder) and stored the scrambled data into the object called mix and seperate each column as a vector:
 
 ```{r}
 oo <- sample(x=1:150, 150, replace=FALSE)
 mix <- iris[oo,]
-```
 
-
-Once I have the scrambled data stored in the object called "mix" I can store each of the columns as a seperate vector:
-
-```{r}
 species <- mix$Species
 petalL <- mix$Petal.Length
 petalW <- mix$Petal.Width
@@ -34,22 +29,22 @@ sepalW <- mix$Sepal.Width
 ```
 
 
-Now that I have each of the columns stored as seperate vectors, I can take the species vector and assign each species its own unique color based on logical operations:
+Now, I can take the species vector and assign each species its own unique color based on logical operations:
 
 ```{r}
-species2 <- species
-color2 <- rep("red", 150)
-species2 == "setosa"
-color2[species2 == "setosa"] <- "purple"
-color2
-color2[species2 == "versicolor"] <- "blue"
-color2
-color2[species2 == "virginica"] <- "orange"
-color2
+species
+color <- rep("red", 150)
+species == "setosa"
+color[species == "setosa"] <- "purple"
+color
+color[species == "versicolor"] <- "blue"
+color
+color[species == "virginica"] <- "orange"
+color
 ```
 
 Cool, Now we can start doing some real analyses. 
-I have have made a best fit line of regression for Sepel Width as a function of Petal Length and have displayed the output stats:
+I have have made a best fit line of regression for Sepal Width as a function of Petal Length and have displayed the output stats:
 
 ```{r}
 sepalW.lm <- lm(sepalW ~ petalL)
@@ -59,7 +54,7 @@ sepalW.lm
 
 This is a scatter plot for "Petal Length vs Petal Width" with a line of best fit.
 ```{r}
-plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+plot(petalL, sepalW, col=color, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
 abline(sepalW.lm, col="black")
 legend('top', legend = levels(species), col = c("purple", "blue", "orange"), cex = .8, pch = 19)
 ```
@@ -69,48 +64,28 @@ As we can see from the graph above, the "general" trend is that as petal length 
 BUT WAIT THERE'S MORE!!!!
 
 
-We can also index the iris dataset by species and make a regression line for Sepel Width as a function of Petal Length FOR EACH SPECIES and we can ALSO calcuate error for the linear regression FOR EACH SPECIES:
+We can also index the iris dataset by species and make a regression line for Sepal Width as a function of Petal Length FOR EACH SPECIES and we can ALSO calcuate error for the linear regression FOR EACH SPECIES:
 ```{r]
 setosa <- mix[mix$Species == "setosa",]
 setosa
 setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
 setosaPLvsSW.lm
-b.setosa <- coef(setosaPLvsSW.lm)
-int.setosa <- b.setosa[1]
-slope.setosa <- b.setosa[2]
-yhat.setosa <- slope.setosa*setosa$Petal.Length+int.setosa
-yhat.setosa
-error.setosa.sepalW <- setosa$Sepal.Width-yhat.setosa
-error.setosa.sepalW
 
 versicolor <- mix[mix$Species == "versicolor",]
 versicolor
 versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
 versicolorPLvsSW.lm
-b.versicolor <- coef(versicolorPLvsSW.lm)
-int.versicolor <- b.versicolor[1]
-slope.versicolor <- b.versicolor[2]
-yhat.versicolor <- slope.versicolor*versicolor$Petal.Length+int.versicolor
-yhat.versicolor
-error.versicolor.sepalW <- versicolor$Sepal.Width-yhat.versicolor
-error.versicolor.sepalW
+
 
 virginica <- mix[mix$Species == "virginica",]
 virginica
 virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
 virginicaPLvsSW.lm
-b.virginica <- coef(virginicaPLvsSW.lm)
-int.virginica <- b.virginica[1]
-slope.virginica <- b.virginica[2]
-yhat.virginica <- slope.virginica*virginica$Petal.Length+int.virginica
-yhat.virginica
-error.virginica.sepalW <- virginica$Sepal.Width-yhat.virginica
-error.virginica.sepalW
 ```
 
 THEN WE CAN PLOT THE DATA AGAIN WITH EACH SPECIES HAVING THEIR OWN LINE OF REGRESSION:
 ```{r}
-plot(petalL, sepalW, col=color2, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+plot(petalL, sepalW, col=color, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
 abline(setosaPLvsSW.lm, col="purple")
 abline(versicolorPLvsSW.lm, col="blue")
 abline(virginicaPLvsSW.lm, col="orange")
