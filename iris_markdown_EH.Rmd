@@ -5,17 +5,9 @@ date: "2020-01-20"
 output: html_document
 ---
 
-Hello! Here are the plots and the code for the plots I have generated with the Iris dataset. I have also gone ahead and included the workflow I used to get the final plots...
+Hello! Here are the plots and the code for the plots I have generated with the Iris dataset
 
-
-It is always a good habit to set your working directory:
-
-```{r}
-setwd("C:/Users/hille/Documents/Rbootcamp_S2020/Iris-repo/")
-```
-
-
-Next, I've scrambled the iris dataset (gotta make it harder) and stored the scrambled data into the object called mix and seperate each column as a vector:
+I've scrambled the iris dataset (gotta make it harder) and stored the scrambled data into the object called mix and seperate each column as a vector:
 
 ```{r}
 oo <- sample(x=1:150, 150, replace=FALSE)
@@ -65,19 +57,18 @@ BUT WAIT THERE'S MORE!!!!
 
 
 We can also index the iris dataset by species and make a regression line for Sepal Width as a function of Petal Length FOR EACH SPECIES and we can ALSO calcuate error for the linear regression FOR EACH SPECIES:
-```{r]
-setosa <- mix[mix$Species == "setosa",]
+```{r}
+setosa <- mix[species == "setosa",]
 setosa
 setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
 setosaPLvsSW.lm
 
-versicolor <- mix[mix$Species == "versicolor",]
+versicolor <- mix[species == "versicolor",]
 versicolor
 versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
 versicolorPLvsSW.lm
 
-
-virginica <- mix[mix$Species == "virginica",]
+virginica <- mix[species == "virginica",]
 virginica
 virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
 virginicaPLvsSW.lm
