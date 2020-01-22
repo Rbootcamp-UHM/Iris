@@ -1,0 +1,48 @@
+---
+title: "Comparison of Petal and Sepal Lengths / Widths"
+author: "Claire"
+date: "2020-01-16"
+output: pdf_document
+---
+**First, set your working directory (varies based on your path):**
+```{r}
+#setwd("C:/Users/frase/Documents/Rclass/ClassCodeData")
+```
+
+**Then, rename the vectors with shorter names:**
+
+```{r}
+Slength <- iris$Sepal.Length
+Swidth <- iris$Sepal.Width
+Plength <- iris$Petal.Length
+Pwidth <- iris$Petal.Width
+Species <- iris$Species
+```
+
+**Finally, plot with the regression line:**
+
+*Here we compare the Petal length and Sepal length values for the 3 species:*
+```{r}
+plot(Slength, Plength, pch=10, col=iris$Species)
+lm(Plength~Slength) #save regression line (y~x)
+lengths.lm <- lm(Plength~Slength)
+abline(lengths.lm, col="blue")
+title(main= "Sepal and Petal Lengths")
+legend("bottomright", legend=levels(iris$Species), col= c(1,2,3), pch=16)
+```
+
+It seems that the setosa species has shorter sepal and petal lengths overall with the longer lengths observed in the virginica and versicolor species
+Generally, across all species there is a positive relationship between Sepal and Petal lengths
+
+
+*Here we compare the Petal width and Sepal width values for the 3 species:*
+```{r}
+plot(Swidth, Pwidth, pch=10, col=iris$Species)
+lm(Pwidth~Swidth) #save regression line (y~x)
+widths.lm <- lm(Pwidth~Swidth)
+abline(widths.lm, col="blue")
+title(main= "Sepal and Petal Widths")
+legend("right", legend=levels(iris$Species), col= c(1,2,3), pch=16)
+```
+
+It seems that the setosa species has longer Sepal widths with shorter Petal widths, while the versicolor and virginica species group near each other, with larger petal widths per sepal width than setosa
