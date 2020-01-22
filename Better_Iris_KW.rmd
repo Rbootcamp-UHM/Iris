@@ -33,6 +33,6 @@ pl.versicolor <- petalL[species=="versicolor"]
 
 This creates a boxplot out of the three grouped variables we named above. We can now see in box plot form how the species compare/contrast in petal length. We have also given each one a seperate color, and named the two axes. Because the x axis is only labeled as species, it is important to note the different between them. This creates a legend titled Speceis, names the species, and pairs them with the color of their box. It also tells R where to place the legend, in the bottom right. 
 ```{r}
-boxplot(pl.setosa, pl.virginica, pl.versicolor, col=c("red", "green", "blue"), xlab="Species", ylab="Petal Length")		
-legend("bottomright", inset=.02, title="Species", c("Setosa", "Virginica", "Versicolor"), fill=c("red", "green", "blue"), horiz=F)
+boxplot(pl.setosa, pl.virginica, pl.versicolor, col=c("red", "green", "blue"), xlab="Species", ylab="Petal Length")
+legend("bottomright", inset=.02, title="Species", legend=c("Setosa", "Virginica", "Versicolor"), fill=c("red", "green", "blue"), horiz=TRUE)
 ```
