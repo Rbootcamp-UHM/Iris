@@ -1,0 +1,38 @@
+---
+title: "Comparing Petal Length by Species"
+author: "Kira"
+data: "2020-01-17"
+output: html_document
+---
+
+By following this code, you will be able to compare species based on petal length in boxed plot form. 
+
+First make sure your working directory is in the right location. 
+```{r}
+getwd() 
+```
+If it is not, set it using a path to your working directory. If your working directory is correct, skip this step.
+```{r}
+# setwd() 
+```
+
+The Iris data set is built in, so you can jump right into renaming your iris variables, in this case petal length and species name.
+```{r}
+petalL <- iris$Petal.Length
+species <- iris$Species
+```
+
+Next we want to group our variable, petal length, into the three major categories presented as species.
+```{r}
+unique(species)
+pl.setosa <- petalL[species=="setosa"]
+pl.virginica <- petalL[species=="virginica"]
+pl.versicolor <- petalL[species=="versicolor"]
+```
+
+
+This creates a boxplot out of the three grouped variables we named above. We can now see in box plot form how the species compare/contrast in petal length. We have also given each one a seperate color, and named the two axes. Because the x axis is only labeled as species, it is important to note the different between them. This creates a legend titled Speceis, names the species, and pairs them with the color of their box. It also tells R where to place the legend, in the bottom right. 
+```{r}
+boxplot(pl.setosa, pl.virginica, pl.versicolor, col=c("red", "green", "blue"), xlab="Species", ylab="Petal Length")
+legend("bottomright", inset=.02, title="Species", legend=c("Setosa", "Virginica", "Versicolor"), fill=c("red", "green", "blue"), horiz=TRUE)
+```
