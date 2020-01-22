@@ -6,3 +6,7 @@
 
 ## Ethanʻs [Iris Analysis with Regression](iris_markdown_EH.html)
 
+## Claireʻs [Petal and Sepal Morphometrics](iris_petalsepalLW_CF.html)
+
+## Kiraʻs [Iris BoxPlots](Better_Iris_KW.html)
+
