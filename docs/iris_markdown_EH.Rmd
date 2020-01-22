@@ -1,0 +1,89 @@
+---
+title: "Ethan's Iris Analysis in RMarkdown"
+author: "Ethan Hill"
+date: "2020-01-20"
+output: html_document
+---
+
+Hello! Here are the plots and the code for the plots I have generated with the Iris dataset
+
+I've scrambled the iris dataset (gotta make it harder) and stored the scrambled data into the object called mix and seperate each column as a vector:
+
+```{r}
+oo <- sample(x=1:150, 150, replace=FALSE)
+mix <- iris[oo,]
+
+species <- mix$Species
+petalL <- mix$Petal.Length
+petalW <- mix$Petal.Width
+sepalL <- mix$Sepal.Length
+sepalW <- mix$Sepal.Width
+```
+
+
+Now, I can take the species vector and assign each species its own unique color based on logical operations:
+
+```{r}
+species
+color <- rep("red", 150)
+species == "setosa"
+color[species == "setosa"] <- "purple"
+color
+color[species == "versicolor"] <- "blue"
+color
+color[species == "virginica"] <- "orange"
+color
+```
+
+Cool, Now we can start doing some real analyses. 
+I have have made a best fit line of regression for Sepal Width as a function of Petal Length and have displayed the output stats:
+
+```{r}
+sepalW.lm <- lm(sepalW ~ petalL)
+sepalW.lm
+```
+
+
+This is a scatter plot for "Petal Length vs Petal Width" with a line of best fit.
+```{r}
+plot(petalL, sepalW, col=color, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+abline(sepalW.lm, col="black")
+legend('top', legend = levels(species), col = c("purple", "blue", "orange"), cex = .8, pch = 19)
+```
+
+As we can see from the graph above, the "general" trend is that as petal length increases, the sepal width decreases.
+
+BUT WAIT THERE'S MORE!!!!
+
+
+We can also index the iris dataset by species and make a regression line for Sepal Width as a function of Petal Length FOR EACH SPECIES and we can ALSO calcuate error for the linear regression FOR EACH SPECIES:
+```{r}
+setosa <- mix[species == "setosa",]
+setosa
+setosaPLvsSW.lm <- lm(setosa$Sepal.Width ~ setosa$Petal.Length)
+setosaPLvsSW.lm
+
+versicolor <- mix[species == "versicolor",]
+versicolor
+versicolorPLvsSW.lm <- lm(versicolor$Sepal.Width ~ versicolor$Petal.Length)
+versicolorPLvsSW.lm
+
+virginica <- mix[species == "virginica",]
+virginica
+virginicaPLvsSW.lm <- lm(virginica$Sepal.Width ~ virginica$Petal.Length)
+virginicaPLvsSW.lm
+```
+
+THEN WE CAN PLOT THE DATA AGAIN WITH EACH SPECIES HAVING THEIR OWN LINE OF REGRESSION:
+```{r}
+plot(petalL, sepalW, col=color, cex=1.5, pch=19, xlab="Petal Length", ylab="Sepal Width")
+abline(setosaPLvsSW.lm, col="purple")
+abline(versicolorPLvsSW.lm, col="blue")
+abline(virginicaPLvsSW.lm, col="orange")
+legend('topright', legend = levels(species), col = c("purple", "blue", "orange"), cex = 1, pch = 19)
+```
+
+What we can see from THIS plot is that, within species, as petal length increases, sepal width ALSO increases. WOW, who would have thought.
+
+And this will conclude my simple anaylsis of the iris dataset!
+
